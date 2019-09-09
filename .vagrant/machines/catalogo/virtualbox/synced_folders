@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/catalogo":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/catalogo","hostpath":"/home/rodpluto/Projetos/vi/catalogo","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/rodpluto/Projetos/vi/catalogo","disabled":false,"__vagrantfile":true}}}
