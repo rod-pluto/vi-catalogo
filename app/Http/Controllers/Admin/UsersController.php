@@ -33,9 +33,9 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+
     }
 
     /**
@@ -66,9 +66,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $user = $this->repo->find( $id );
+        return view("admin.users.edit_form", compact('user'));
     }
 
     /**

@@ -21,10 +21,11 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-custom-primary shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-custom-primary shadow-sm">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img src="{{ asset('images/logo30x80.png') }}" class="" width="100" height="30" alt="" style="margin-right: 12px">
+                    Painel Administrativo
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,8 +73,20 @@
             </div>
         </nav>
 
+        <!--div class="text-center logo-top d-none d-sm-block fixed-top">
+            <img src="{{ asset('images/logo.png') }}" class="img-responsive" alt="">
+        </div-->
+
         <main class="py-4">
-            @yield('content')
+            <!-- Vertical navbar -->
+            @include("layouts._navbar-menu")
+            <!-- End vertical navbar -->
+
+
+            <!-- Page content holder -->
+            <div class="page-content p-5" id="content">
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
