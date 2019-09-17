@@ -31,8 +31,6 @@ try {
 	require( 'datatables.net-rowreorder-bs4' )();
 	require( 'datatables.net-scroller-bs4' )();
 	require( 'datatables.net-select-bs4' )();
-
-	const Swal = require('sweetalert2');
 } catch (e) {}
 
 /**

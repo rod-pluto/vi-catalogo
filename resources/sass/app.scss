@@ -8,6 +8,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 //@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4";
 
 // Login CSS
 @import 'login';
@@ -58,8 +59,8 @@ body {
 }
 
 .page-content {
-  width: calc(100% - 17rem);
-  margin-left: 17rem;
+  width: calc(100% - 15rem);
+  margin-left: 16rem;
   transition: all 0.4s;
 }
 
@@ -78,13 +79,16 @@ body {
   #sidebar {
     margin-left: -17rem;
   }
+
   #sidebar.active {
     margin-left: 0;
   }
+
   #content {
     width: 100%;
     margin: 0;
   }
+  
   #content.active {
     margin-left: 17rem;
     width: calc(100% - 17rem);
