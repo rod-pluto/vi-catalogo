@@ -17,12 +17,28 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
 
+// Rotas Administrativas
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
-    'as' =>'admin.'
-], function( $adminRoute ) {
-    $adminRoute->resource('usuarios', 'UsersController');
+    'as' => 'admin.'
+], function( $admin ) {
+    // usuarios
+    $admin->resource('usuarios', UsersController::class);
+
+    // produtos
+    $admin->resource('produtos', ProductsController::class);
+});
+
+// Rotas Publicas
+Route::group([
+    'prefix' => 'cliente',
+    'namespace' => 'Customer',
+    'as' => 'customer.'
+], function( $customer ) {
+
 });

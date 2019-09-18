@@ -5,8 +5,3 @@
  */
 
 require('./bootstrap');
-require('./font-awesome');
-
-$('table.table').DataTable();
-
-require('./controllers/users.controller');
