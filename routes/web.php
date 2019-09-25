@@ -21,16 +21,14 @@ Route::get('/home', function() {
     return view('home');
 })->name('home')->middleware('auth');
 
+
 // Rotas Administrativas
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
     'as' => 'admin.'
 ], function( $admin ) {
-    // usuarios
     $admin->resource('usuarios', UsersController::class);
-
-    // produtos
     $admin->resource('produtos', ProductsController::class);
 });
 
