@@ -137,6 +137,21 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'Categorias',
+            'url'         => 'admin/categorias',
+            'icon'        => 'fa fa-box',
+        ],
+        [
+            'text'        => 'Produtos',
+            'url'         => 'admin/produtos',
+            'icon'        => 'fa fa-box',
+        ],
+        [
+            'text'        => 'Usuários',
+            'url'         => 'admin/usuarios',
+            'icon'        => 'fa fa-user',
+        ],
+        /*[
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-file',
@@ -191,7 +206,7 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
+        ],*/
         ['header' => 'labels'],
         [
             'text'       => 'important',

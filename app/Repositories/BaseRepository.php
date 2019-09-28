@@ -22,14 +22,14 @@ class BaseRepository implements BaseInterface {
     }
 
     public function update( int $id, array $data ) {
-        $entity = $this->findOrFail( $id );
+        $entity = $this->model->findOrFail( $id );
         $entity->fill( $data );
         $entity->save();
         return $entity;
     }
 
     public function delete( int $id ):bool {
-        $entity = $this->findOrFail( $id );
+        $entity = $this->model->findOrFail( $id );
         if ( $entity->delete() ) {
             return true;
         }

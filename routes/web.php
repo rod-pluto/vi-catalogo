@@ -26,9 +26,11 @@ Route::get('/home', function() {
 Route::group([
     'prefix' => 'admin',
     'namespace' => 'Admin',
-    'as' => 'admin.'
+    'middleware' => ['auth'],
+    'as' => 'admin.',
 ], function( $admin ) {
     $admin->resource('usuarios', UsersController::class);
+    $admin->resource('categorias', ProductCategoriesController::class);
     $admin->resource('produtos', ProductsController::class);
 });
 
@@ -38,5 +40,5 @@ Route::group([
     'namespace' => 'Customer',
     'as' => 'customer.'
 ], function( $customer ) {
-
+    $customer->get('catalogo', 'CatalogController@index');
 });

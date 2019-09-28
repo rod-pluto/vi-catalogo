@@ -40,11 +40,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Usuario companhia terá VARIOS CLIENTES
+     */
     public function customers() {
         return $this->hasMany(User::class, 'company_id');
     }
 
+    /**
+     * Usuario cliente será associado a uma companhia
+     */
     public function company() {
         return $this->belongsTo(User::class, 'company_id');
+    }
+
+    /**
+     * Produtos relacionados
+     */
+    public function products() {
+        return $this->hasMany(Product::class, 'company_id');
     }
 }

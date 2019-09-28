@@ -19,8 +19,8 @@ class UsersTableSeeder extends Seeder
         // Criacao dos usuarios EMPRESA
         factory(App\Models\User::class, 10)->states('company')->create()->each(function ($user) {
             $user->assignRole('company');
-            // cada empresa terá 150 clientes
-            factory(App\Models\User::class, 150)->create()->each(function( $customer ) use( $user ) {
+            // cada empresa terá 20 clientes
+            factory(App\Models\User::class, 20)->create()->each(function( $customer ) use( $user ) {
                 $customer->assignRole('customer');
                 $customer->company_id = $user->id;
                 $customer->save();
