@@ -1,7 +1,6 @@
 @extends('adminlte::page')
 
 @section('content')
-
     <div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title">
@@ -9,19 +8,21 @@
                 Produtos
                 <small>Listagem geral de produtos do sistema</small>
             </h3>
+            @hasrole('admin')
             <div class="box-tools pull-right">
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="btn btn-primary"
                     data-toggle="modal" data-target="#addProductModal"
                 >Novo produto</button>
             </div>
+            @endhasrole
             <!-- /.box-tools -->
         </div>
         <!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-                <table id="users-table" class="table table-condensed table-hovered table-striped">
+                <table id="products-table" class="table table-condensed table-hovered table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -46,14 +47,14 @@
                                 <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                                 <td class="pull-right">
                                     <div class="btn-group btn-group-xs" role="group">
-                                        <button class="btn btn-default" 
+                                        <button class="btn btn-default"
                                             user-id="{{ $product->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
                                             onclick="showProduct({{ $product->id }}, this)"
                                         >
                                             <i class="fa fa-fw fa-eye"></i>
                                             ver
                                         </button>
-                                        <button class="btn btn-default" 
+                                        <button class="btn btn-default"
                                             user-id="{{ $product->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
                                             onclick="editProduct({{ $product->id }}, this)"
                                         >
@@ -101,31 +102,5 @@
     </div>
 
     @include('admin.products._modal')
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-@stop
-
-@section('js')
-    <script src="{{ asset('js/app.js?') . date('dmYHis')  }}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-center",
-        };
-
-        @if( session()->has('status') && session()->has('message') )
-            toastr.{{session('status')}}('{{session('message')}}');
-            console.log('true');
-        @endif
-
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                toastr.error('{{ $error }}');
-                console.log('true');
-            @endforeach
-        @endif
-    </script>
+    @include('admin.products._ean_modal')
 @stop

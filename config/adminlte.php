@@ -126,100 +126,53 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-        ],
         ['header' => 'main_navigation'],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'Inicio',
+            'url'  => '/home',
+            'icon' => 'fa fa-home'
         ],
         [
             'text'        => 'Categorias',
             'url'         => 'admin/categorias',
             'icon'        => 'fa fa-box',
+            'can'         => 'admin-access'
         ],
         [
             'text'        => 'Produtos',
             'url'         => 'admin/produtos',
             'icon'        => 'fa fa-box',
+            'can'         => 'admin-access'
         ],
         [
             'text'        => 'Usuários',
             'url'         => 'admin/usuarios',
             'icon'        => 'fa fa-user',
-        ],
-        /*[
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'can'         => 'admin-access'
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'        => 'Catálogo de Produtos',
+            'url'         => 'cliente/catalogo',
+            'icon'        => 'fa fa-book',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Categoria #1',
+                    'url'  => '/cliente/catalogo/?categoria=1',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Categoria #2',
+                    'url'  => '/cliente/catalogo/?categoria=2',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Categoria #3',
+                    'url'  => '/cliente/catalogo/?categoria=3',
                 ],
+                [
+                    'text' => 'Categoria #4',
+                    'url'  => '/cliente/catalogo/?categoria=4',
+                ]
             ],
-        ],*/
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+        ]
     ],
 
     /*

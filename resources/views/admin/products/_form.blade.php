@@ -1,52 +1,81 @@
-<input type="hidden" name="company_id" value="{{ Auth::user()->id }}"/>
-<input type="hidden" name="image" value="https://via.placeholder.com/200"/>
-
 <div class="row">
-    <div class="form-group col-sm-12">
-        <label for="category_id">Categoria</label>
-        <select class="form-control" name="category_id" id="category_id" required>
-            <option>Selecione o tipo</option>
-            @foreach($categories as $category)
-                <option 
-                    value="{{ $category->id }}"
-                    @if( optional(optional($product)->category)->id == $category->id ) selected @endif
-                >
-                    {{ $category->name }}
-                </option>
-            @endforeach
-        </select>
+    <div class="col-sm-6">
+        <div class="thumbnail">
+            <img src="@if( $product != null) {{ $product->image }} @else https://via.placeholder.com/800 @endif" alt="...">
+        </div>
+
+        <div class="form-group">
+            <label for="company_id">Empresa</label>
+            <select class="form-control select2js" name="company_id" id="company_id" required>
+                <option>Selecione o tipo</option>
+                @foreach($companies as $company)
+                    <option
+                        value="{{ $company->id }}"
+                        @if( optional(optional($product)->company)->id == $company->id ) selected @endif
+                    >
+                        {{ $company->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <label for="category_id">Categoria</label>
+            <select class="form-control select2js" name="category_id" id="category_id" required>
+                <option>Selecione o tipo</option>
+                @foreach($categories as $category)
+                    <option
+                        value="{{ $category->id }}"
+                        @if( optional(optional($product)->category)->id == $category->id ) selected @endif
+                    >
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ean">EAN</label>
+            <div class="input-group">
+                <input class="form-control" name="ean" id="ean" value="{{ optional($product)->ean }}" required>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" onclick="eanPicker()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="url">Url</label>
+            <input class="form-control" name="image" id="url" value="{{ optional($product)->image }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input class="form-control" name="name" id="name" value="{{ optional($product)->name }}" required>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-5">
+                <label for="und">Unidade</label>
+                <input class="form-control" name="und" id="und" value="{{ optional($product)->und }}" required>
+            </div>
+            <div class="form-group col-sm-7">
+                <label for="price">Preço</label>
+                <div class="input-group">
+                    <span class="input-group-addon" >R$</span>
+                    <input class="form-control" name="price" id="price" value="{{ number_format(optional($product)->price, 2, ',', '.') }}" required>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="form-group col-sm-12">
-        <label for="ean">EAN</label>
-        <input class="form-control" name="ean" id="ean" value="{{ optional($product)->ean }}" required>
-    </div>
-
-    <div class="form-group col-sm-12">
-        <label for="name">Nome</label>
-        <input class="form-control" name="name" id="name" value="{{ optional($product)->name }}" required>
-    </div>
-</div>
 
 <div class="row">
     <div class="form-group col-sm-12">
-        <label for="und">Unidade</label>
-        <input class="form-control" name="und" id="und" value="{{ optional($product)->und }}" required>
-    </div>
-</div>
-
-<div class="row">
-    <div class="form-group col-sm-12">
-        <label for="price">Preço</label>
-        <input class="form-control" name="price" id="price" value="{{ optional($product)->price }}" required>
-    </div>
-</div>
-
-<div class="row">
-    <div class="form-group col-sm-12">
-        <label for="description">Descricao</label>
+        <label for="description">Descrição</label>
         <textarea class="form-control" name="description" id="description" required>
             {{ optional($product)->description }}
         </textarea>

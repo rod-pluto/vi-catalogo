@@ -10,8 +10,8 @@
                 <small>Listagem geral de usuários do sistema</small>
             </h3>
             <div class="box-tools pull-right">
-                <button 
-                    type="button" 
+                <button
+                    type="button"
                     class="btn btn-primary"
                     data-toggle="modal" data-target="#addCategoryModal"
                 >Novo usuário</button>
@@ -36,14 +36,14 @@
                                 <td>{{ $category->name }}</td>
                                 <td class="pull-right">
                                     <div class="btn-group btn-group-xs" role="group">
-                                        <button class="btn btn-default" 
+                                        <button class="btn btn-default"
                                             category-id="{{ $category->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
                                             onclick="showCategory({{ $category->id }}, this)"
                                         >
                                             <i class="fa fa-fw fa-eye"></i>
                                             ver
                                         </button>
-                                        <button class="btn btn-default" 
+                                        <button class="btn btn-default"
                                             category-id="{{ $category->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
                                             onclick="editCategory({{ $category->id }}, this)"
                                         >
@@ -90,31 +90,4 @@
     </div>
 
     @include('admin.categories._modal')
-@stop
-
-@section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-@stop
-
-@section('js')
-    <script src="{{ asset('js/app.js?') . date('dmYHis')  }}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-    <script>
-        toastr.options = {
-            "positionClass": "toast-top-center",
-        };
-
-        @if( session()->has('status') && session()->has('message') )
-            toastr.{{session('status')}}('{{session('message')}}');
-            console.log('true');
-        @endif
-
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                toastr.error('{{ $error }}');
-                console.log('true');
-            @endforeach
-        @endif
-    </script>
 @stop

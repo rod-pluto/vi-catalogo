@@ -3,14 +3,26 @@
         <label for="role">Tipo</label>
         <select class="form-control" name="role" id="role" required>
             <option>Selecione o tipo</option>
-            <option 
-                value="admin"
-                @if( optional(optional($user)->roles[0])->name == 'admin' ) selected @endif
-            >Administrador</option>
-            <option 
-                value="company"
-                @if( optional(optional($user)->roles[0])->name == 'company' ) selected @endif
-            >Empresa</option>
+            @hasrole('admin')
+                <option
+                    value="admin"
+                    @if( optional(optional($user)->roles[0])->name == 'admin' ) selected @endif
+                >Administrador</option>
+                <option
+                    value="company"
+                    @if( optional(optional($user)->roles[0])->name == 'company' ) selected @endif
+                >Empresa</option>
+                <option
+                    value="customer"
+                    @if( optional(optional($user)->roles[0])->name == 'customer' ) selected @endif
+                >Cliente</option>
+            @endhasrole
+            @hasrole('company')
+                <option
+                    value="customer"
+                    @if( optional(optional($user)->roles[0])->name == 'customer' ) selected @endif
+                >Cliente</option>
+            @endhasrole
         </select>
     </div>
 </div>
@@ -34,7 +46,7 @@
     </div>
 </div>
 
-@if( !$isUpdate ) 
+@if( !$isUpdate )
     <div class="row">
         <div class="form-group col-sm-12">
             <label for="password_confirmation">Confirme a senha</label>

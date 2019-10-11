@@ -1,0 +1,73 @@
+body {
+  /* Location of the image */
+  background-image: url(/images/fundo.jpg?368a50614ac60ac8c410f61973538114) !important;
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center !important;
+  /* Background image doesn't tile */
+  background-repeat: no-repeat !important;
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed !important;
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover !important;
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+}
+
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+  table#cart tbody td .form-control {
+    /*width:15%;*/
+    display: inline !important;
+  }
+
+  .actions .btn {
+    width: 30%;
+    margin: 1.5em 0;
+  }
+
+  .actions .btn-info {
+    float: left;
+  }
+
+  .actions .btn-danger {
+    float: right;
+  }
+
+  table#cart thead {
+    display: none;
+  }
+
+  table#cart tbody td {
+    display: block;
+    padding: 0.6rem;
+    min-width: 280px;
+  }
+
+  table#cart tbody tr td:first-child {
+    background: #333;
+    color: #fff;
+  }
+
+  table#cart tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 8rem;
+  }
+
+  table#cart tfoot td {
+    display: block;
+  }
+
+  table#cart tfoot td .btn {
+    display: block !important;
+  }
+}
+

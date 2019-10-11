@@ -12,19 +12,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         // Criacao do usuario GLOBAL
-        factory(App\Models\User::class, 3)->create()->each(function ($user) {
+        factory(App\Models\User::class, 1)->create()->each(function ($user) {
             $user->assignRole('admin');
-        });;
-
-        // Criacao dos usuarios EMPRESA
-        factory(App\Models\User::class, 10)->states('company')->create()->each(function ($user) {
-            $user->assignRole('company');
-            // cada empresa terá 20 clientes
-            factory(App\Models\User::class, 20)->create()->each(function( $customer ) use( $user ) {
-                $customer->assignRole('customer');
-                $customer->company_id = $user->id;
-                $customer->save();
-            });
         });
     }
 }

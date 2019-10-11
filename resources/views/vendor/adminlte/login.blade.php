@@ -2,15 +2,23 @@
 
 @section('adminlte_css')
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}"
     @yield('css')
 @stop
 
 @section('body_class', 'login-page')
 
 @section('body')
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+    <div class="login-box" style="margin-top: 2%">
+        <div class="login-logo text-center">
+            <center>
+                <a href="#">
+                    <img 
+                        class="img-responsive" src="{{ asset('img/logo-app.png') }}"
+                        width="235px"
+                    >
+                </a>
+            </center>                
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
@@ -54,19 +62,6 @@
                     <!-- /.col -->
                 </div>
             </form>
-            <br>
-            <p>
-                <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}" class="text-center">
-                    {{ __('adminlte::adminlte.i_forgot_my_password') }}
-                </a>
-            </p>
-            @if (config('adminlte.register_url', 'register'))
-                <p>
-                    <a href="{{ url(config('adminlte.register_url', 'register')) }}" class="text-center">
-                        {{ __('adminlte::adminlte.register_a_new_membership') }}
-                    </a>
-                </p>
-            @endif
         </div>
         <!-- /.login-box-body -->
     </div><!-- /.login-box -->

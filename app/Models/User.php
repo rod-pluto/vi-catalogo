@@ -60,4 +60,20 @@ class User extends Authenticatable
     public function products() {
         return $this->hasMany(Product::class, 'company_id');
     }
+
+    public function orders() {
+        return $this->hasMany(Order\Order::class, 'customer_id');
+    }
+
+    public function companyOrders() {
+        $orders = [];
+
+        foreach( $this->customers as $customer ) {
+
+            if ( count($customer->orders) )
+                $orders[] = $customer->orders;
+        }
+
+        return $orders[0];
+    }
 }

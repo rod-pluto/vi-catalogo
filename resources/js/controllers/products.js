@@ -35,6 +35,12 @@ function deleteProduct( product_id, btn ) {
 
 }
 
+function eanPicker() {
+    var url = '/admin/produtos';
+    const modal = $('#eanModal');
+    modal.modal('show');
+}
+
 /** EVENTOS */
 
 $('#products-table').DataTable();

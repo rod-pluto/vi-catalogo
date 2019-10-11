@@ -5,6 +5,7 @@
     @include('admin.products._form', [
         'product' => $product,
         'categories' => $categories,
+        'companies' => $companies,
         'isUpdate' => true
     ])
 </form>

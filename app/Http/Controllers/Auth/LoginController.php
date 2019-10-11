@@ -37,5 +37,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
+        if (Auth::user() && Auth::user()->roles[0]->name == 'customer')
+            $this->redirectTo = '/cliente/catalogo';
     }
 }

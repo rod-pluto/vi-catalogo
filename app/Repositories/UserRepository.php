@@ -18,7 +18,7 @@ class UserRepository extends BaseRepository implements UserInterface {
     public function create( array $data ): User {
         $data['password'] = Hash::make( $data['password'] );
         unset($data['password_confirmation']);
-        
+
         $user = $this->model->create( $data );
         $user->assignRole( $data['role'] );
 
@@ -30,8 +30,8 @@ class UserRepository extends BaseRepository implements UserInterface {
 
         if ( $user ) {
 
-            if ( $data['email'] == $user->email ){ 
-                unset($data['email']); 
+            if ( $data['email'] == $user->email ){
+                unset($data['email']);
             }
             if ( $data['password'] == null ) {
                 unset($data['password']);
@@ -40,13 +40,18 @@ class UserRepository extends BaseRepository implements UserInterface {
             }
 
             unset($data['password_confirmation']);
-            
+
             $user->fill( $data );
             $user->syncRoles($data['role']);
 
             $user->save();
-        } 
+        }
 
         return $user;
+    }
+
+    public function findAllCompanies()
+    {
+        return $this->model->role('company')->get();
     }
 }

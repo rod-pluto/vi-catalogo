@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('ean');
             $table->string('image');
             $table->string('name');
+            $table->string('und')->nullable();
             $table->float('price');
             $table->text('description');
             $table->boolean('status')->default(true);

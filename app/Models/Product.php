@@ -12,6 +12,7 @@ class Product extends Model
         'image',
         'ean',
         'name',
+        'und',
         'price',
         'description',
         'status'

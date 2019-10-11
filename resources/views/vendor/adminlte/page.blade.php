@@ -1,6 +1,6 @@
 @extends('adminlte::master')
 
-@php 
+@php
     if( Auth::user()->roles[0]->name == 'customer' ) {
         config(['adminlte.layout' => 'top-nav']);
     }
@@ -9,6 +9,7 @@
 @section('adminlte_css')
     <link rel="stylesheet"
           href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     @stack('css')
     @yield('css')
 @stop
@@ -63,9 +64,19 @@
                 <div class="navbar-custom-menu">
 
                     <ul class="nav navbar-nav">
+                        @hasrole('customer')
+                        <li>
+                            <a href="{{ route('customer.shopping-cart') }}">
+                                <i class="fa fa-fw fa-shopping-cart"></i>
+                                <span id="spccounter" class="label label-default">0</span>
+                                <span class="hidden-xs">Produtos</span>
+                            </a>
+                        </li>
+                        @endhasrole('customer')
                         <li>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fa fa-fw fa-power-off"></i> {{ __('adminlte::adminlte.log_out') }}
+                                <i class="fa fa-fw fa-power-off"></i>
+                                <span class="hidden-xs">{{ __('adminlte::adminlte.log_out') }}</span>
                             </a>
                             <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
@@ -150,6 +161,26 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('js/app.js?') . date('dmYHis')  }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script>
+        toastr.options = {
+            "positionClass": "toast-top-center",
+        };
+
+        @if( session()->has('status') && session()->has('message') )
+        toastr.{{session('status')}}('{{session('message')}}');
+        console.log('true');
+        @endif
+
+        @if ($errors->any())
+        @foreach ($errors->all() as $error)
+        toastr.error('{{ $error }}');
+        console.log('true');
+        @endforeach
+        @endif
+    </script>
     @stack('js')
     @yield('js')
 @stop
