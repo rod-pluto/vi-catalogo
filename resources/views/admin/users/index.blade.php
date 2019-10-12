@@ -33,6 +33,7 @@
                     </thead>
                     <tbody>
                         @foreach ($users as $user )
+                            @if( Auth::user()->roles[0]->name == 'admin' && $user->roles[0]->name == 'customer')
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
@@ -82,6 +83,7 @@
                                     </button>
                                 </td>
                             </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

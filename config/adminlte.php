@@ -157,7 +157,17 @@ return [
             'submenu'     => [
                 [
                     'text'        => 'Categoria teste #1',
-                    'url'         => 'cliente/catalogo/?catalogo1',
+                    'url'         => 'cliente/catalogo/?categoria=1',
+                    'icon'        => null,
+                ],
+                [
+                    'text'        => 'Categoria teste #2',
+                    'url'         => 'cliente/catalogo/?categoria=2',
+                    'icon'        => null,
+                ],
+                [
+                    'text'        => 'Categoria teste #3',
+                    'url'         => 'cliente/catalogo/?categoria=3',
                     'icon'        => null,
                 ]
             ]

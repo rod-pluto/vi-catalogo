@@ -12,10 +12,6 @@
                     value="company"
                     @if( optional(optional($user)->roles[0])->name == 'company' ) selected @endif
                 >Empresa</option>
-                <option
-                    value="customer"
-                    @if( optional(optional($user)->roles[0])->name == 'customer' ) selected @endif
-                >Cliente</option>
             @endhasrole
             @hasrole('company')
                 <option
