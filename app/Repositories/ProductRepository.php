@@ -12,4 +12,18 @@ class ProductRepository extends BaseRepository implements ProductInterface {
     {
         $this->model = $product;
     }
+
+    public function delete( int $id ):bool {
+        $entity = $this->model->findOrFail( $id );
+
+        if ($entity->items) {
+            return false;
+        }
+
+        if ( $entity->delete() ) {
+            return true;
+        }
+
+        return false;
+    }
 }

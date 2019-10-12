@@ -220,8 +220,13 @@ function showProduct( product_id, btn ) {
       });
 }
 
-function deleteProduct( product_id, btn ) {
-
+function deleteProduct( prod_id ) {
+    if (
+        confirm('Você tem certeza dessa ação ?')
+    ) {
+        $('#delete-product-form').attr('action', '/admin/produtos/'+prod_id);
+        $('#delete-product-form').submit();
+    }
 }
 
 function eanPicker() {
@@ -284,12 +289,16 @@ function showUser( user_id, btn ) {
       });
 }
 
-function deleteUser( user_id, btn ) {
-
+function deleteUser( user_id ) {
+    if (
+        confirm('Você tem certeza dessa ação ?')
+    ) {
+        $('#delete-user-form').attr('action', '/admin/usuarios/'+user_id);
+        $('#delete-user-form').submit();
+    }
 }
 
 /** EVENTOS */
-
 $('#users-table').DataTable();
 
 $('.edit-user').click(function(){

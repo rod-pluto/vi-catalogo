@@ -413,6 +413,7 @@ class ComposerStaticInit291a500f7edcbc092d1dd18fb415f99c
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\OrdersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OrdersController.php',
         'App\\Http\\Controllers\\Admin\\ProductCategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductCategoriesController.php',
         'App\\Http\\Controllers\\Admin\\ProductsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductsController.php',
         'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',
@@ -423,6 +424,8 @@ class ComposerStaticInit291a500f7edcbc092d1dd18fb415f99c
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Customer\\CatalogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/CatalogController.php',
+        'App\\Http\\Controllers\\Customer\\OrdersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Customer/OrdersController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

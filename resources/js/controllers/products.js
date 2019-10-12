@@ -31,8 +31,13 @@ function showProduct( product_id, btn ) {
       });
 }
 
-function deleteProduct( product_id, btn ) {
-
+function deleteProduct( prod_id ) {
+    if (
+        confirm('Você tem certeza dessa ação ?')
+    ) {
+        $('#delete-product-form').attr('action', '/admin/produtos/'+prod_id);
+        $('#delete-product-form').submit();
+    }
 }
 
 function eanPicker() {

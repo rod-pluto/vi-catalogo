@@ -149,6 +149,18 @@ return [
             'url'         => 'admin/usuarios',
             'icon'        => 'fa fa-user',
             'can'         => 'admin-access'
+        ],
+        [
+            'text'        => 'Catálogo de Produtos',
+            'url'         => 'cliente/catalogo',
+            'icon'        => 'fa fa-book',
+            'submenu'     => [
+                [
+                    'text'        => 'Categoria teste #1',
+                    'url'         => 'cliente/catalogo/?catalogo1',
+                    'icon'        => null,
+                ]
+            ]
         ]
     ],
 

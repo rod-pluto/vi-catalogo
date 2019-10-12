@@ -13,7 +13,9 @@ class UsersTableSeeder extends Seeder
     {
         // Criacao do usuario GLOBAL
         factory(App\Models\User::class, 1)->create()->each(function ($user) {
+            $user->email = 'admin@admin.com';
             $user->assignRole('admin');
+            $user->save();
         });
     }
 }

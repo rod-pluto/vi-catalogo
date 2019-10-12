@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'customer_id', 'company_id',
     ];
 
     /**
@@ -74,6 +74,6 @@ class User extends Authenticatable
                 $orders[] = $customer->orders;
         }
 
-        return $orders[0];
+        return count($orders) ? $orders[0] : $orders;
     }
 }

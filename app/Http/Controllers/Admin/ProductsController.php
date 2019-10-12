@@ -79,7 +79,20 @@ class ProductsController extends Controller
         }
     }
 
-    public function destroy(Request $request, $id) {}
+    public function destroy(Request $request, $id) {
+        try {
+            $this->product->delete( $id );
+            return redirect()->route('admin.produtos.index')->with([
+                'status' => 'success',
+                'message' => 'Produto apagado com sucesso'
+            ]);
+        } catch(\Exception $e) {
+            return redirect()->back()->with([
+                'status' => 'error',
+                'message' => 'Ocorreu algum erro no processamento. Tente novamente em alguns instantes'
+            ]);
+        }
+    }
 
     public function ean() {
         $json = json_decode(file_get_contents('http://vi-ean.rodsouza.com.br/api/images'), true);

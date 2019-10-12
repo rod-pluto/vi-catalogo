@@ -74,7 +74,9 @@
                                         </button>
                                     </div>
 
-                                    <button class="btn btn-xs btn-danger" user-id="{{ $user->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando....">
+                                    <button class="btn btn-xs btn-danger" user-id="{{ $user->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
+                                            onclick="deleteUser({{ $user->id }})"
+                                        >
                                         <i class="fa fa-fw fa-trash"></i>
                                         apagar
                                     </button>
@@ -110,6 +112,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Delete user modal -->
+    <form id="delete-user-form" action="/admin/usuarios/" method="POST">
+        @csrf
+        {{ method_field('DELETE') }}
+    </form>
 
     @include('admin.users._modal')
 @stop

@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\User;
+use App\Models\Order\Order;
 use App\Repositories\Interfaces\UserRepositoryInterface as UserInterface;
 
 class UserRepository extends BaseRepository implements UserInterface {
@@ -48,6 +49,56 @@ class UserRepository extends BaseRepository implements UserInterface {
         }
 
         return $user;
+    }
+
+    public function delete( int $id ):bool {
+        $entity = $this->model->findOrFail( $id );
+
+        $role = $entity->roles[0]->name;
+
+        switch( $role ) {
+            case 'company':
+                if ( $entity->customers ) {
+                    $customers = $entity->customers;
+                    foreach ($customers as $customer) {
+                        if ( count($customer->orders ) ) {
+                            foreach( $customer->orders as $order ){
+                                foreach($order->items as $item) {
+                                    $item->delete();
+                                }
+                                $order->delete();
+                            }
+                        }
+                        $customer->delete();
+                    }
+                }
+
+                if ($entity->products) {
+                    $products = $entity->products;
+                    foreach( $products as $product ) {
+                        $product->delete();
+                    }
+                }
+
+                break;
+
+            case 'customer':
+                if ( count($entity->orders ) ) {
+                    foreach( $entity->orders as $order ){
+                        foreach($order->items as $item) {
+                            $item->delete();
+                        }
+                        $order->delete();
+                    }
+                }
+                break;
+        }
+
+        if( $entity->delete() ){
+            return true;
+        }
+
+        return false;
     }
 
     public function findAllCompanies()

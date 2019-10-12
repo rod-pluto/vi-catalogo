@@ -69,5 +69,18 @@ class UsersController extends Controller
         }
     }
 
-    public function destroy(Request $request, $id) {}
+    public function destroy(Request $request, $id) {
+        try {
+            $this->user->delete( $id );
+            return redirect()->route('admin.usuarios.index')->with([
+                'status' => 'success',
+                'message' => 'Usuário e todos os seus dados foram apagados da base de dados'
+            ]);
+        } catch(\Exception $e) {
+            return redirect()->back()->with([
+                'status' => 'error',
+                'message' => 'Ocorreu algum erro no processamento. Tente novamente em alguns instantes'
+            ]);
+        }
+    }
 }

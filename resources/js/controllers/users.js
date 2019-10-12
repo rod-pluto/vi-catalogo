@@ -30,12 +30,16 @@ function showUser( user_id, btn ) {
       });
 }
 
-function deleteUser( user_id, btn ) {
-
+function deleteUser( user_id ) {
+    if (
+        confirm('Você tem certeza dessa ação ?')
+    ) {
+        $('#delete-user-form').attr('action', '/admin/usuarios/'+user_id);
+        $('#delete-user-form').submit();
+    }
 }
 
 /** EVENTOS */
-
 $('#users-table').DataTable();
 
 $('.edit-user').click(function(){

@@ -63,7 +63,9 @@
                                         </button>
                                     </div>
 
-                                    <button class="btn btn-xs btn-danger" user-id="{{ $product->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando....">
+                                    <button class="btn btn-xs btn-danger" user-id="{{ $product->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
+                                            onclick="deleteProduct({{ $product->id }})"
+                                        >
                                         <i class="fa fa-fw fa-trash"></i>
                                         apagar
                                     </button>
@@ -100,6 +102,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Delete product form -->
+    <form id="delete-product-form" action="/admin/produtos/" method="POST">
+        @csrf
+        {{ method_field('DELETE') }}
+    </form>
 
     @include('admin.products._modal')
     @include('admin.products._ean_modal')

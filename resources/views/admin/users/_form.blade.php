@@ -61,3 +61,7 @@
         <button type="submit" class="btn btn-primary">Salvar dados</button>
     </div>
 </div>
+
+@if( Auth::user()->roles[0]->name == 'company' )
+    <input type="hidden" name="company_id" value="{{ Auth::user()->id }}">
+@endif
