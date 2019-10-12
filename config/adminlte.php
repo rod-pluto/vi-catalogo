@@ -149,29 +149,6 @@ return [
             'url'         => 'admin/usuarios',
             'icon'        => 'fa fa-user',
             'can'         => 'admin-access'
-        ],
-        [
-            'text'        => 'Catálogo de Produtos',
-            'url'         => 'cliente/catalogo',
-            'icon'        => 'fa fa-book',
-            'submenu' => [
-                [
-                    'text' => 'Categoria #1',
-                    'url'  => '/cliente/catalogo/?categoria=1',
-                ],
-                [
-                    'text' => 'Categoria #2',
-                    'url'  => '/cliente/catalogo/?categoria=2',
-                ],
-                [
-                    'text' => 'Categoria #3',
-                    'url'  => '/cliente/catalogo/?categoria=3',
-                ],
-                [
-                    'text' => 'Categoria #4',
-                    'url'  => '/cliente/catalogo/?categoria=4',
-                ]
-            ],
         ]
     ],
 

@@ -12,8 +12,7 @@ class CatalogController extends Controller
 {
     public function index(Request $request) {
         if ($request->has('categoria') ) {
-            $where = ['category_id', $request->input('categoria')];
-            if( Auth::user()->roles[0]->name != 'customer ') {
+            if( Auth::user()->roles[0]->name != 'customer') {
                 $products = Auth::user()->products;
                 $products = $products->where('category_id', $request->input('categoria'));
             } else {
@@ -21,7 +20,7 @@ class CatalogController extends Controller
                 $products = $products->where('category_id', $request->input('categoria'));
             }
         } else {
-            if( Auth::user()->roles[0]->name != 'customer ') {
+            if( Auth::user()->roles[0]->name != 'customer') {
                 $products = Auth::user()->products;
             } else {
                 $products = Auth::user()->company->products;
