@@ -57,21 +57,21 @@ body {
 }
 
 .prod-box-info {
-    //min-height: 75px;
+    min-height: 50px;
     word-break: break-all;
     vertical-align: text-bottom;
 }
 
 @media screen and (max-width: 600px) {
     .prod-box-info {
-        //min-height: 58px;
+        min-height: 58px;
         word-break: break-all;
     }
 }
 
 @media screen and (orientation:portrait) {
     .prod-box-info {
-        //min-height: 78px;
+        min-height: 78px;
         word-break: break-all;
     }
 }

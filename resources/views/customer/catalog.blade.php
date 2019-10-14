@@ -9,7 +9,7 @@
                     <img src="{{ $product->image }}" alt="...">
                     <div class="prod-box-info">
                         <h5 style="color:brown">
-                            <b>{{ $product->getCod() }}</b>
+                            <b>{{ $product->name }}</b>
                         </h5>
                     </div>
                 </div>
