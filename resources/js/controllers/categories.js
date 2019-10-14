@@ -37,7 +37,11 @@ function deleteCategory( category_id, btn ) {
 
 /** EVENTOS */
 
-$('#categories-table').DataTable();
+$('#categories-table').DataTable({
+    language: {
+        'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+    }
+});
 
 $('.edit-category').click(function(){
    $(this).button('loading');

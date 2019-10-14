@@ -167,7 +167,11 @@ function deleteCategory( category_id, btn ) {
 
 /** EVENTOS */
 
-$('#categories-table').DataTable();
+$('#categories-table').DataTable({
+    language: {
+        'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+    }
+});
 
 $('.edit-category').click(function(){
    $(this).button('loading');
@@ -237,7 +241,11 @@ function eanPicker() {
 
 /** EVENTOS */
 
-$('#products-table').DataTable();
+$('#products-table').DataTable({
+    language: {
+        'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+    }
+});
 
 $('.edit-product').click(function(){
    $(this).button('loading');
@@ -299,7 +307,11 @@ function deleteUser( user_id ) {
 }
 
 /** EVENTOS */
-$('#users-table').DataTable();
+$('#users-table').DataTable({
+    language: {
+        'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+    }
+});
 
 $('.edit-user').click(function(){
    $(this).button('loading');

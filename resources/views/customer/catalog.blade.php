@@ -8,7 +8,9 @@
                 <div class="thumbnail" onclick="modalAddItem({{ $product->id }})">
                     <img src="{{ $product->image }}" alt="...">
                     <div class="prod-box-info">
-                        <h5>{{ $product->name }}</h5>
+                        <h5 style="color:brown">
+                            <b>{{ $product->getCod() }}</b>
+                        </h5>
                     </div>
                 </div>
             </div>

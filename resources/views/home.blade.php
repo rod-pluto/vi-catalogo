@@ -145,6 +145,9 @@
     <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
     <script>
         $('#orders-table').DataTable({
+            language: {
+                'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+            },
             dom: 'Bfrtip',
             buttons: [
                 'copyHtml5',

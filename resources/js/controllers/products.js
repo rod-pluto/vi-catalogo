@@ -48,7 +48,11 @@ function eanPicker() {
 
 /** EVENTOS */
 
-$('#products-table').DataTable();
+$('#products-table').DataTable({
+    language: {
+        'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
+    }
+});
 
 $('.edit-product').click(function(){
    $(this).button('loading');
