@@ -5,7 +5,6 @@ namespace App\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\User;
-use App\Models\Order\Order;
 use App\Models\Order\Item;
 
 class Order extends Model
