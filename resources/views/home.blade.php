@@ -74,7 +74,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($orders as $order)
+                            @foreach($orders as $orderss)
+                                @foreach( $orderss as $order )
                                 <tr class="@if( $order->status == 'pending') bg-warning @elseif( $order->status == 'approved') bg-success @else bg-danger @endif">
                                     @hasanyrole('admin|company')
                                     <td>{{ $order->id }}</td>
@@ -120,6 +121,7 @@
                                         @endhasanyrole
                                     </td>
                                 </tr>
+                                @endforeach
                             @endforeach
                         </tbody>
                     </table>
