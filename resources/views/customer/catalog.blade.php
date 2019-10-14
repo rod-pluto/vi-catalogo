@@ -4,7 +4,7 @@
 
     <div class="row">
         @foreach( $products as $product )
-            <div class="col-xs-4 col-sm-4 col-md-2 text-center">
+            <div class="col-xs-6 col-sm-4 col-md-2 text-center">
                 <div class="thumbnail" onclick="modalAddItem({{ $product->id }})">
                     <img src="{{ $product->image }}" alt="...">
                     <div class="prod-box-info">

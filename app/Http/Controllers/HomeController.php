@@ -21,5 +21,13 @@ class HomeController extends Controller
 	    }
 
 	    return view('home', compact('orders'));
-	}
+    }
+
+    public function redirectTo() {
+        if (Auth::user() && Auth::user()->roles[0]->name == 'customer') {
+            return redirect('/cliente/catalogo/?categoria=1');
+        } else {
+            return redirect('/home');
+        }
+    }
 }

@@ -26,7 +26,13 @@ class UsersController extends Controller
 
     public function index() {
         if (Auth::user()->roles[0]->name == 'admin') {
-            $users = $this->user->findAll();
+            $nonFilterUsers = $this->user->findAll();
+            $users = [];
+            foreach( $nonFilterUsers as $user ) {
+                if ( $user->roles[0]->name != 'customer' && $user->id != Auth::user()->id ) {
+                    $users[] = $user;
+                }
+            }
         } else {
             $users = Auth::user()->customers;
         }

@@ -1,4 +1,24 @@
 <?php
+$names = [
+    'Alimentos',
+    'Bebidas',
+    'Bomboniere',
+    'Doces',
+    'Descartáveis',
+    'Ferramentas',
+    'Higiene Pessoal',
+    'Panificação',
+    'Agro'
+];
+
+$categories = [];
+foreach( $names as $index => $cat ) {
+    $categories[] = [
+        'text'  => $cat,
+        'url'   => 'cliente/catalogo/?categoria='.($index+1),
+        'icon'  => null,
+    ];
+}
 
 return [
 
@@ -154,23 +174,7 @@ return [
             'text'        => 'Catálogo de Produtos',
             'url'         => 'cliente/catalogo',
             'icon'        => 'fa fa-book',
-            'submenu'     => [
-                [
-                    'text'        => 'Categoria teste #1',
-                    'url'         => 'cliente/catalogo/?categoria=1',
-                    'icon'        => null,
-                ],
-                [
-                    'text'        => 'Categoria teste #2',
-                    'url'         => 'cliente/catalogo/?categoria=2',
-                    'icon'        => null,
-                ],
-                [
-                    'text'        => 'Categoria teste #3',
-                    'url'         => 'cliente/catalogo/?categoria=3',
-                    'icon'        => null,
-                ]
-            ]
+            'submenu'     => $categories,
         ]
     ],
 
