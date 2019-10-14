@@ -74,6 +74,6 @@ class User extends Authenticatable
                 $orders[] = $customer->orders;
         }
 
-        return count($orders) ? $orders[0] : $orders;
+        return count($orders) ? $orders : [];
     }
 }

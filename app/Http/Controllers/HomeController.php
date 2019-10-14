@@ -20,7 +20,7 @@ class HomeController extends Controller
 	    	$orders = Auth::user()->orders;
         }
 
-        return Auth::user()->customers;
+        return $orders;
 
 	    return view('home', compact('orders'));
     }
