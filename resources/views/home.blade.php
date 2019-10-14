@@ -126,7 +126,7 @@
                             @endforeach
                             @endhasanyrole
                             @hasrole('customer')
-                                @foreach( $orderss as $order )
+                                @foreach( $orders as $order )
                                     <tr class="@if( $order->status == 'pending') bg-warning @elseif( $order->status == 'approved') bg-success @else bg-danger @endif">
                                         @hasanyrole('admin|company')
                                         <td>{{ $order->id }}</td>
