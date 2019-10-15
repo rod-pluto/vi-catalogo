@@ -8,7 +8,9 @@ $names = [
     'Ferramentas',
     'Higiene Pessoal',
     'Panificação',
-    'Agro'
+    'Agro',
+    'Promoções',
+    'Novos Produtos'
 ];
 
 $categories = [];
