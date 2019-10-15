@@ -13,7 +13,7 @@ class HomeController extends Controller
 		$orders = [];
 
 	    if (Auth::user()->roles[0]->name == 'admin') {
-	    	$orders = Order::paginate(10);
+	    	$orders = Order::all();
 	    } elseif( Auth::user()->roles[0]->name == 'company') {
 	    	$orders = Auth::user()->companyOrders();
 	    } else {

@@ -74,58 +74,57 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @hasanyrole('admin|company')
-                            @foreach($orders as $orderss)
-                                @foreach( $orderss as $order )
-                                    <tr class="@if( $order->status == 'pending') bg-warning @elseif( $order->status == 'approved') bg-success @else bg-danger @endif">
-                                        @hasanyrole('admin|company')
-                                        <td>{{ $order->id }}</td>
-                                        <td>{{ $order->customer->name }}</td>
-                                        <td>{{ $order->customer->email }}</td>
-                                        @endhasanyrole
-                                        <td @if(Auth::user()->roles[0]->name=='customer') width="80%" @endif>{{ $order->updated_at->format('d-m-Y H:i:s') }}</td>
-                                        <td width="10%">
-                                            @switch( $order->status )
-                                                @case('approved')
-                                                    <span class="label label-success">Aprovado</span>
-                                                    @break
-                                                @case('pending')
-                                                    <span class="label label-warning">Pendente</span>
-                                                    @break
-                                                @case('denied')
-                                                    <span class="label label-danger">Negado</span>
-                                                    @break
-                                            @endswitch
-                                        </td>
-                                        <td class="text-center" width="18%">
-                                            <button class="btn btn-xs btn-default" onclick="toggleOrderInfo({{ $order->id }})">
-                                                <i id="btn-toggle-icon" class="fa fa-fw fa-plus"></i>
-                                                info
-                                            </button>
+                            @if( Auth::user()->roles[0]-name == 'company')
+                                @foreach($orders as $orderss)
+                                    @foreach( $orderss as $order )
+                                        <tr class="@if( $order->status == 'pending') bg-warning @elseif( $order->status == 'approved') bg-success @else bg-danger @endif">
                                             @hasanyrole('admin|company')
-                                                @if( $order->status == 'pending')
-                                                    <form method="post" action="/admin/pedido/{{$order->id}}/aprovar" style="float:right">
-                                                        @csrf
-                                                        <button class="btn btn-xs btn-success">
-                                                            <i id="btn-toggle-icon" class="fa fa-fw fa-check"></i>
-                                                            aprovar
-                                                        </button>
-                                                    </form>
-                                                    <form method="post" action="/admin/pedido/{{$order->id}}/negar" style="float:right">
-                                                        @csrf
-                                                        <button class="btn btn-xs btn-danger">
-                                                            <i id="btn-toggle-icon" class="fa fa-fw fa-exclamation"></i>
-                                                            negar
-                                                        </button>
-                                                    </form>
-                                                @endif
+                                            <td>{{ $order->id }}</td>
+                                            <td>{{ $order->customer->name }}</td>
+                                            <td>{{ $order->customer->email }}</td>
                                             @endhasanyrole
-                                        </td>
-                                    </tr>
+                                            <td @if(Auth::user()->roles[0]->name=='customer') width="80%" @endif>{{ $order->updated_at->format('d-m-Y H:i:s') }}</td>
+                                            <td width="10%">
+                                                @switch( $order->status )
+                                                    @case('approved')
+                                                        <span class="label label-success">Aprovado</span>
+                                                        @break
+                                                    @case('pending')
+                                                        <span class="label label-warning">Pendente</span>
+                                                        @break
+                                                    @case('denied')
+                                                        <span class="label label-danger">Negado</span>
+                                                        @break
+                                                @endswitch
+                                            </td>
+                                            <td class="text-center" width="18%">
+                                                <button class="btn btn-xs btn-default" onclick="toggleOrderInfo({{ $order->id }})">
+                                                    <i id="btn-toggle-icon" class="fa fa-fw fa-plus"></i>
+                                                    info
+                                                </button>
+                                                @hasanyrole('admin|company')
+                                                    @if( $order->status == 'pending')
+                                                        <form method="post" action="/admin/pedido/{{$order->id}}/aprovar" style="float:right">
+                                                            @csrf
+                                                            <button class="btn btn-xs btn-success">
+                                                                <i id="btn-toggle-icon" class="fa fa-fw fa-check"></i>
+                                                                aprovar
+                                                            </button>
+                                                        </form>
+                                                        <form method="post" action="/admin/pedido/{{$order->id}}/negar" style="float:right">
+                                                            @csrf
+                                                            <button class="btn btn-xs btn-danger">
+                                                                <i id="btn-toggle-icon" class="fa fa-fw fa-exclamation"></i>
+                                                                negar
+                                                            </button>
+                                                        </form>
+                                                    @endif
+                                                @endhasanyrole
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endforeach
-                            @endforeach
-                            @endhasanyrole
-                            @hasrole('customer')
+                            @else
                                 @foreach( $orders as $order )
                                     <tr class="@if( $order->status == 'pending') bg-warning @elseif( $order->status == 'approved') bg-success @else bg-danger @endif">
                                         @hasanyrole('admin|company')
@@ -173,7 +172,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                            @endhasrole
+                            @endif
                         </tbody>
                     </table>
                 </div>
