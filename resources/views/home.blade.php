@@ -74,7 +74,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if( Auth::user()->roles[0]-name == 'company')
+                            @if( Auth::user()->roles[0]->name == 'company')
                                 @foreach($orders as $orderss)
                                     @foreach( $orderss as $order )
                                         <tr class="@if( $order->status == 'pending') bg-warning @elseif( $order->status == 'approved') bg-success @else bg-danger @endif">
