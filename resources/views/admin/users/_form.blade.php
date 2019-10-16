@@ -2,7 +2,6 @@
     <div class="form-group col-sm-12">
         <label for="role">Tipo</label>
         <select class="form-control" name="role" id="role" required>
-            <option>Selecione o tipo</option>
             @hasrole('admin')
                 <option
                     value="admin"

@@ -29,7 +29,15 @@ class UsersController extends Controller
             $nonFilterUsers = $this->user->findAll();
             $users = [];
             foreach( $nonFilterUsers as $user ) {
-                if ( $user->roles[0]->name != 'customer' && $user->id != Auth::user()->id ) {
+                if ( !count($user->roles) ) {
+                    $user->delete();
+                } else if (
+                    count($user->roles) &&
+                    (
+                        $user->roles[0]->name != 'customer' &&
+                        $user->id != Auth::user()->id
+                    )
+                ) {
                     $users[] = $user;
                 }
             }
