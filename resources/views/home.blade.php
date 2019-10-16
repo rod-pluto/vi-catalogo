@@ -97,7 +97,7 @@
                                                         @break
                                                 @endswitch
                                             </td>
-                                            <td class="text-center" width="18%">
+                                            <td class="text-center">
                                                 <button class="btn btn-xs btn-default" onclick="toggleOrderInfo({{ $order->id }})">
                                                     <i id="btn-toggle-icon" class="fa fa-fw fa-plus"></i>
                                                     info
@@ -119,6 +119,14 @@
                                                             </button>
                                                         </form>
                                                     @endif
+                                                    <form method="post" action="/admin/pedido/{{$order->id}}" style="float:right">
+                                                        @csrf
+                                                        {{ method_field('DELETE') }}
+                                                        <button class="btn btn-xs btn-danger">
+                                                            <i id="btn-toggle-icon" class="fa fa-fw fa-trash"></i>
+                                                            apagar
+                                                        </button>
+                                                    </form>
                                                 @endhasanyrole
                                             </td>
                                         </tr>
@@ -146,7 +154,7 @@
                                                     @break
                                             @endswitch
                                         </td>
-                                        <td class="text-center" width="18%">
+                                        <td class="text-center" width="25%">
                                             <button class="btn btn-xs btn-default" onclick="toggleOrderInfo({{ $order->id }})">
                                                 <i id="btn-toggle-icon" class="fa fa-fw fa-plus"></i>
                                                 info
@@ -168,6 +176,14 @@
                                                         </button>
                                                     </form>
                                                 @endif
+                                                <form method="post" action="/admin/pedido/{{$order->id}}" style="float:right">
+                                                    @csrf
+                                                    {{ method_field('DELETE') }}
+                                                    <button class="btn btn-xs btn-danger">
+                                                        <i id="btn-toggle-icon" class="fa fa-fw fa-trash"></i>
+                                                        apagar
+                                                    </button>
+                                                </form>
                                             @endhasanyrole
                                         </td>
                                     </tr>

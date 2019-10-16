@@ -34,6 +34,7 @@ Route::group([
 
     $admin->post('pedido/{id_pedido}/aprovar', 'OrdersController@approved');
     $admin->post('pedido/{id_pedido}/negar', 'OrdersController@denied');
+    $admin->delete('pedido/{id_pedido}','OrdersController@delete');
 });
 
 // Rotas Publicas

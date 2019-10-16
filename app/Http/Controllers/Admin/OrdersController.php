@@ -41,4 +41,17 @@ class OrdersController extends Controller
             ]);
         }
     }
+
+    public function delete($id) {
+        $order = Order::find($id);
+        foreach( $order->items as $item ) {
+            $item->delete();
+        }
+        $order->delete();
+
+        return redirect()->back()->with([
+            'status' => 'success',
+            'message' => 'Ordem de pedido apagada da base de dados'
+        ]);
+    }
 }
