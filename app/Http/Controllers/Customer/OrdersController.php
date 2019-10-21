@@ -13,7 +13,9 @@ class OrdersController extends Controller
 {
     public function show( $id ) {
         $order = Order::findOrFail($id);
-        return view('customer.order_detail', compact('order'));
+        $total=0;
+        foreach ( $order->items as $item ) {$total += ($item->quantity * $item->product->price);}
+        return view('customer.order_detail', compact('order', 'total'));
     }
 
     public function store(Request $request) {

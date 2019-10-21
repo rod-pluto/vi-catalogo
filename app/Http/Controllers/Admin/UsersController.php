@@ -18,7 +18,7 @@ class UsersController extends Controller
         UserRepository $user
     ){
         $this->middleware(
-            ['role:admin|company']
+            ['role:admin|dealer']
         );
 
         $this->user = $user;

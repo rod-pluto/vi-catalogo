@@ -31,5 +31,11 @@
             </tr>
         @endforeach
         </tbody>
+        <tfoot class="bg-primary">
+            <tr>
+                <td colspan="3"></td>
+                <td><b>R$ {{ number_format($total, 2, ',', '.') }}</b></td>
+            </tr>
+        </tfoot>
     </table>
 </div>

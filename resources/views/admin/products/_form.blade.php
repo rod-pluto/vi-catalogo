@@ -3,21 +3,6 @@
         <div class="thumbnail">
             <img src="@if( $product != null) {{ $product->image }} @else https://via.placeholder.com/800 @endif" alt="...">
         </div>
-
-        <div class="form-group">
-            <label for="company_id">Empresa</label>
-            <select class="form-control select2js" name="company_id" id="company_id" required>
-                <option>Selecione o tipo</option>
-                @foreach($companies as $company)
-                    <option
-                        value="{{ $company->id }}"
-                        @if( optional(optional($product)->company)->id == $company->id ) selected @endif
-                    >
-                        {{ $company->name }}
-                    </option>
-                @endforeach
-            </select>
-        </div>
     </div>
     <div class="col-sm-6">
         <div class="form-group">

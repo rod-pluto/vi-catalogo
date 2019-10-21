@@ -54,7 +54,7 @@ function updateTable() {
 
 
             body =  '<tr id="row-'+id+'">';
-            body +=     '<td data-th="Product">';
+            body +=     '<td data-th="Produtos">';
             body +=         '<div class="row">';
             body +=             '<div class="col-sm-2 hidden-xs">';
             body +=                 '<img src="'+image+'" alt="..." class="img-responsive"/>';
@@ -65,9 +65,9 @@ function updateTable() {
             body +=             '</div>';
             body +=         '</div>';
             body +=     '</td>';
-            body +=     '<td data-th="Price">R$ '+price+'</td>';
-            body +=     '<td data-th="Quantity">';
-            body +=         '<input type="hidden" name="items[]" value="'+id+'">'
+            body +=     '<td data-th="Preço">R$ '+price+'</td>';
+            body +=     '<td data-th="Quantidade">';
+            body +=         '<input type="hidden" name="items[]" value="'+id+'">';
             body +=         '<input type="number" class="form-control text-center quantity" name="quantity[]" onChange="updateItemTable('+cont+', this)" value="'+quantity+'">';
             body +=     '</td>';
             body +=     '<td data-th="Subtotal" class="text-center">'+parseFloat((quantity * price).toFixed(2))+'</td>';

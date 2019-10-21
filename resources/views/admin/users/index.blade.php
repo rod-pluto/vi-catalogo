@@ -43,9 +43,9 @@
                                                 administrador
                                             </span>
                                         @break
-                                        @case('company')
+                                        @case('dealer')
                                             <span class="label label-warning">
-                                                empresa
+                                                representante
                                             </span>
                                         @break
                                         @case('customer')

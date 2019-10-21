@@ -8,11 +8,11 @@
                     @if( optional(optional($user)->roles[0])->name == 'admin' ) selected @endif
                 >Administrador</option>
                 <option
-                    value="company"
-                    @if( optional(optional($user)->roles[0])->name == 'company' ) selected @endif
-                >Empresa</option>
+                    value="dealer"
+                    @if( optional(optional($user)->roles[0])->name == 'dealer' ) selected @endif
+                >Representante</option>
             @endhasrole
-            @hasrole('company')
+            @hasrole('dealer')
                 <option
                     value="customer"
                     @if( optional(optional($user)->roles[0])->name == 'customer' ) selected @endif
@@ -57,6 +57,6 @@
     </div>
 </div>
 
-@if( Auth::user()->roles[0]->name == 'company' )
-    <input type="hidden" name="company_id" value="{{ Auth::user()->id }}">
+@if( Auth::user()->roles[0]->name == 'dealer' )
+    <input type="hidden" name="dealer_id" value="{{ Auth::user()->id }}">
 @endif

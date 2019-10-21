@@ -31,7 +31,7 @@ class ProductsController extends Controller
 
         $products = $this->product->findAll();
         $categories = $this->category->findAll();
-        $companies = $this->user->findAllCompanies();
+        $companies = $this->user->findAllDealers();
 
         return view('admin.products.index', compact('products', 'categories', 'companies'));
     }
@@ -39,7 +39,7 @@ class ProductsController extends Controller
     public function show( $id ) {
         $product  = $this->product->find($id);
         $categories = $this->category->findAll();
-        $companies = $this->user->findAllCompanies();
+        $companies = $this->user->findAllDealers();
 
         return view('admin.products.edit', compact('product', 'categories', 'companies'));
     }

@@ -11,20 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class CatalogController extends Controller
 {
     public function index(Request $request) {
+
         if ($request->has('categoria') ) {
-            if( Auth::user()->roles[0]->name != 'customer') {
-                $products = Auth::user()->products;
-                $products = $products->where('category_id', $request->input('categoria'));
-            } else {
-                $products = Auth::user()->company->products;
-                $products = $products->where('category_id', $request->input('categoria'));
-            }
-        } else {
-            if( Auth::user()->roles[0]->name != 'customer') {
-                $products = Auth::user()->products;
-            } else {
-                $products = Auth::user()->company->products;
-            }
+            $products = Product::where('category_id', $request->input('categoria'))->get();
         }
 
         return view('customer.catalog', compact('products'));

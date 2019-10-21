@@ -26,9 +26,8 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Empresa</th>
-                            <th>EAN</th>
                             <th>Nome</th>
+                            <th>EAN</th>
                             <th>Categoria</th>
                             <th>Unidade</th>
                             <th>Preço</th>
@@ -39,9 +38,8 @@
                         @foreach ($products as $product )
                             <tr>
                                 <td>{{ $product->id }}</td>
-                                <td>{{ $product->company->name }}</td>
-                                <td>{{ $product->ean }}</td>
                                 <td>{{ $product->name }}</td>
+                                <td>{{ $product->ean }}</td>
                                 <td>{{ $product->category->name}}</td>
                                 <td>{{ $product->und }}</td>
                                 <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>

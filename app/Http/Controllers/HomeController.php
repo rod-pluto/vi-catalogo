@@ -11,16 +11,22 @@ class HomeController extends Controller
 {
 	public function index(Request $request) {
 		$orders = [];
+		$dealers = [];
 
 	    if (Auth::user()->roles[0]->name == 'admin') {
 	    	$orders = Order::all();
-	    } elseif( Auth::user()->roles[0]->name == 'company') {
-	    	$orders = Auth::user()->companyOrders();
+	    	$dealers = Auth::user()->role('dealer')->get();
+	    } elseif( Auth::user()->roles[0]->name == 'dealer') {
+	    	$orders = Auth::user()->dealerOrders();
 	    } else {
 	    	$orders = Auth::user()->orders;
         }
 
-	    return view('home', compact('orders'));
+	    if ( $request->has('dealer') ){
+	        $orders = Auth::user()->dealerOrders($request->input('dealer'));
+        }
+
+	    return view('home', compact('orders', 'dealers'));
     }
 
     public function redirectTo() {

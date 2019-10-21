@@ -57,7 +57,7 @@ class UserRepository extends BaseRepository implements UserInterface {
         $role = $entity->roles[0]->name;
 
         switch( $role ) {
-            case 'company':
+            case 'dealer':
                 if ( $entity->customers ) {
                     $customers = $entity->customers;
                     foreach ($customers as $customer) {
@@ -72,14 +72,6 @@ class UserRepository extends BaseRepository implements UserInterface {
                         $customer->delete();
                     }
                 }
-
-                if ($entity->products) {
-                    $products = $entity->products;
-                    foreach( $products as $product ) {
-                        $product->delete();
-                    }
-                }
-
                 break;
 
             case 'customer':
@@ -101,8 +93,8 @@ class UserRepository extends BaseRepository implements UserInterface {
         return false;
     }
 
-    public function findAllCompanies()
+    public function findAllDealers()
     {
-        return $this->model->role('company')->get();
+        return $this->model->role('dealer')->get();
     }
 }
