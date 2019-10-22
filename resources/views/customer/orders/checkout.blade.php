@@ -28,10 +28,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="/cliente/catalogo" class="btn btn-warning">
+                        <button type="button" class="btn btn-warning" onclick="javascript:history.back()">
                             <i class="fa fa-angle-left"></i>
                             Continuar comprando
-                        </a>
+                        </button>
                     </td>
                     <td colspan="2"></td>
                     <td class="visible-xs"></td>
