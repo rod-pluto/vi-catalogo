@@ -57,6 +57,7 @@
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Ultimos Pedidos</h3>
+                    @hasrole('admin')
                     <div class="pull-right">
                         <form id="dealer-form">
                             <div class="form-group">
@@ -69,7 +70,7 @@
                             </div>
                         </form>
                     </div>
-
+                    @endhasrole
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive">
