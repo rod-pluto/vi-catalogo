@@ -30,7 +30,7 @@
                     <td>
                         <button type="button" class="btn btn-warning" onclick="javascript:history.back()">
                             <i class="fa fa-angle-left"></i>
-                            Continuar comprando
+                            Voltar
                         </button>
                     </td>
                     <td colspan="2"></td>
