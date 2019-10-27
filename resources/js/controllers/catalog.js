@@ -41,8 +41,15 @@ function updateTable() {
         items = window.sessionStorage.getItem('items');
         items = JSON.parse(items);
 
-        total = 0;
+        if ( items.length > 0) {
+            $('#process-order-button').removeClass('disabled');
+            $('#process-order-button').attr('disabled', false);
+        } else {
+            $('#process-order-button').addClass('disabled');
+            $('#process-order-button').attr('disabled', true);
+        }
 
+        total = 0;
         html = "";
         for (cont=0; cont < items.length; cont++) {
             id          = items[cont][0];

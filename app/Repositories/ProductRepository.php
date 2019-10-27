@@ -26,4 +26,9 @@ class ProductRepository extends BaseRepository implements ProductInterface {
 
         return false;
     }
+
+    public function findByCategoryId($id)
+    {
+        return $this->model->where('category_id', $id)->get();
+    }
 }

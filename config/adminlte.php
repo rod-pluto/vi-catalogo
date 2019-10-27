@@ -170,7 +170,7 @@ return [
             'text'        => 'Usuários',
             'url'         => 'admin/usuarios',
             'icon'        => 'fa fa-user',
-            'can'         => 'admin-access'
+            'can'         => 'admin-dealer-access'
         ],
         [
             'text'        => 'Catálogo de Produtos',

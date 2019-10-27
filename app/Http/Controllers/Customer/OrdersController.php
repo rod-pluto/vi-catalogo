@@ -24,8 +24,15 @@ class OrdersController extends Controller
     	$quantities = $request->input('quantity');
 
     	if ( count($items) ) {
+
+            $customer = Auth::user()->id;
+
+            if (Auth::user()->roles[0]->name == 'dealer') {
+                $customer = $request->input('customer_id');
+            }
+
             $order = Order::create([
-                'customer_id' => Auth::user()->id
+                'customer_id' => $customer
             ]);
 
     		foreach($items as $index => $item) {

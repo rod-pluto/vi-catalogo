@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <label for="name">Nome</label>
-            <input class="form-control" name="name" id="name" value="{{ optional($product)->name }}" required>
+            <input class="form-control" name="name" id="name" value="{{ optional($product)->name }}" maxlength="50" required>
         </div>
 
         <div class="row">

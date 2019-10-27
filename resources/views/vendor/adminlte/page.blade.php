@@ -64,7 +64,7 @@
                 <div class="navbar-custom-menu">
 
                     <ul class="nav navbar-nav">
-                        @hasrole('customer')
+                        @hasanyrole('dealer|customer')
                         <li>
                             <a href="{{ route('customer.shopping-cart') }}">
                                 <i class="fa fa-fw fa-shopping-cart"></i>
@@ -72,7 +72,7 @@
                                 <span class="hidden-xs">Produtos</span>
                             </a>
                         </li>
-                        @endhasrole('customer')
+                        @endhasanyrole('dealer|customer')
                         <li>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fa fa-fw fa-power-off"></i>

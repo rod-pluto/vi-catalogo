@@ -32,7 +32,12 @@ function showCategory( category_id, btn ) {
 }
 
 function deleteCategory( category_id, btn ) {
-
+    if (
+        confirm('Você tem certeza dessa ação ?')
+    ) {
+        $('#delete-category-form').attr('action', '/admin/categorias/'+category_id);
+        $('#delete-category-form').submit();
+    }
 }
 
 /** EVENTOS */

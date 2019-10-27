@@ -14,7 +14,7 @@
                     type="button"
                     class="btn btn-primary"
                     data-toggle="modal" data-target="#addCategoryModal"
-                >Novo usuário</button>
+                >Nova categoria</button>
             </div>
             <!-- /.box-tools -->
         </div>
@@ -52,7 +52,12 @@
                                         </button>
                                     </div>
 
-                                    <button class="btn btn-xs btn-danger" category-id="{{ $category->id }}" data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando....">
+                                    <button
+                                        class="btn btn-xs btn-danger"
+                                        category-id="{{ $category->id }}"
+                                        data-loading-text="<i class='fa fa-fw fa-spinner'></i>Processando...."
+                                        onclick="deleteCategory({{ $category->id }})"
+                                    >
                                         <i class="fa fa-fw fa-trash"></i>
                                         apagar
                                     </button>
@@ -88,6 +93,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Delete category form -->
+    <form id="delete-category-form" action="/admin/categorias/" method="POST">
+        @csrf
+        {{ method_field('DELETE') }}
+    </form>
 
     @include('admin.categories._modal')
 @stop

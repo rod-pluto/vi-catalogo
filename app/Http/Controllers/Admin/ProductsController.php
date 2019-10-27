@@ -27,11 +27,15 @@ class ProductsController extends Controller
         $this->user = $user;
     }
 
-    public function index() {
-
-        $products = $this->product->findAll();
+    public function index(Request $request) {
         $categories = $this->category->findAll();
         $companies = $this->user->findAllDealers();
+
+        if ( $request->has('categoria') ) {
+            $products = $this->product->findByCategoryId($request->input('categoria'));
+        } else{
+            $products = $this->product->findAll();
+        }
 
         return view('admin.products.index', compact('products', 'categories', 'companies'));
     }

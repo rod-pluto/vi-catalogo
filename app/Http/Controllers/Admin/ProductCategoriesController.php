@@ -24,7 +24,7 @@ class ProductCategoriesController extends Controller
     }
 
     public function index() {
-       
+
         $categories = $this->category->findAll();
 
         return view('admin.categories.index', compact('categories'));
@@ -65,5 +65,18 @@ class ProductCategoriesController extends Controller
         }
     }
 
-    public function destroy(Request $request, $id) {}
+    public function destroy(Request $request, $id) {
+        try {
+            $this->category->delete( $id );
+            return redirect()->route('admin.categorias.index')->with([
+                'status' => 'success',
+                'message' => 'Categoria apagada com sucesso'
+            ]);
+        } catch(\Exception $e) {
+            return redirect()->back()->with([
+                'status' => 'error',
+                'message' => 'Ocorreu algum erro no processamento. '.$e->getMessage()
+            ]);
+        }
+    }
 }

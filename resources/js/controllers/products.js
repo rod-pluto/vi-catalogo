@@ -71,3 +71,7 @@ $('.delete-product').click(function(){
    console.log( $(this).attr('product-id'));
    deleteProduct( $(this).attr('product-id'), $(this) );
 });
+
+$('#category-filter').change(function(){
+    $('#category-filter-form').submit();
+});

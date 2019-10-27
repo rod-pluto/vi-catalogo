@@ -10,6 +10,9 @@
             </h3>
             @hasrole('admin')
             <div class="box-tools pull-right">
+
+
+
                 <button
                     type="button"
                     class="btn btn-primary"
@@ -21,6 +24,21 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+
+            <div class="row">
+                <form id="category-filter-form">
+                    <div class="col-md-2 col-sm-2 form-group">
+                        <label for="category-filter">Categoria</label>
+                        <select class="form-control" id="category-filter" name="categoria">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+
             <div class="table-responsive">
                 <table id="products-table" class="table table-condensed table-hovered table-striped">
                     <thead>
