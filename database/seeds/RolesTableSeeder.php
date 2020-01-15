@@ -24,6 +24,10 @@ class RolesTableSeeder extends Seeder
 
         // Usuário Funcionario/Empresa
 
+        $dealerRole = Role::create([
+            'name' => 'dealer'
+        ]);
+
         // Usuário Comerciante/Lojista/Cliente Geral
         $customerRole = Role::create([
             'name' => 'customer'

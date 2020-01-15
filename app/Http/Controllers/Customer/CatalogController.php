@@ -13,7 +13,12 @@ class CatalogController extends Controller
     public function index(Request $request) {
 
         if ($request->has('categoria') ) {
-            $products = Product::where('category_id', $request->input('categoria'))->get();
+            $products = Product::where(
+                    'category_id',
+                    $request->input('categoria')
+                )->orderBy('order')->get();
+        } else {
+            $products = Product::all();
         }
 
         return view('customer.catalog', compact('products'));

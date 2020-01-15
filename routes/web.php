@@ -32,6 +32,9 @@ Route::group([
     $admin->resource('categorias', ProductCategoriesController::class);
     $admin->resource('produtos', ProductsController::class);
 
+    $admin->get('reordenar/produtos', 'ReorderingController@index');
+    $admin->get('reordenar/produtos/categoria/{category_id}', 'ReorderingController@reorder');
+    $admin->post('reordenar/produtos/categoria/{categoria_id}', 'ReorderingController@update');
     $admin->post('pedido/{id_pedido}/aprovar', 'OrdersController@approved');
     $admin->post('pedido/{id_pedido}/negar', 'OrdersController@denied');
     $admin->delete('pedido/{id_pedido}','OrdersController@delete');
