@@ -167,8 +167,8 @@ return [
             'can'         => 'admin-access'
         ],
         [
-            'text'        => 'Reorganizar Produtos',
-            'url'         => 'admin/reorganizar/produtos',
+            'text'        => 'Reordenar Produtos',
+            'url'         => 'admin/reordenar/produtos',
             'icon'        => 'fa fa-sort',
             'can'         => 'admin-access'
         ],
