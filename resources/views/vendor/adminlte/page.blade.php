@@ -62,7 +62,6 @@
             @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
-
                     <ul class="nav navbar-nav">
                         @hasanyrole('dealer|customer')
                         <li>
