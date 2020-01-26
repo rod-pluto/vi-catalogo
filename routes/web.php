@@ -19,7 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/painel', 'HomeController@redirectTo')->middleware('auth');
-
+Route::get('pesquisa', 'HomeController@search');
+Route::get('produto/{product_id}', 'HomeController@product');
 
 // Rotas Administrativas
 Route::group([

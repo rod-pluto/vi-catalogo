@@ -431,6 +431,7 @@ class ComposerStaticInit291a500f7edcbc092d1dd18fb415f99c
         'App\\Http\\Controllers\\Admin\\OrdersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OrdersController.php',
         'App\\Http\\Controllers\\Admin\\ProductCategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductCategoriesController.php',
         'App\\Http\\Controllers\\Admin\\ProductsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProductsController.php',
+        'App\\Http\\Controllers\\Admin\\ReorderingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ReorderingController.php',
         'App\\Http\\Controllers\\Admin\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UsersController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',

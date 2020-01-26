@@ -151,10 +151,10 @@ return [
         ['header' => 'Pesquisa de Produtos'],
         [
             'search' => true,
-            'href' => '/products/search',  //form action
-            'method' => 'POST', //form method
+            'href' => '/pesquisa',  //form action
+            'method' => 'GET', //form method
             'input_name' => 'menu-search-input', //input name
-            'text' => 'Código ean do produto', //input placeholder
+            'text' => 'Descrição do produto', //input placeholder
         ],
         ['header' => 'main_navigation'],
         [

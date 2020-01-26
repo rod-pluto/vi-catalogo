@@ -2,6 +2,11 @@
 
 @section('content')
 
+    <style>
+        #sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+        #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 200px; height: 210px; text-align: center; }
+    </style>
+
     <div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title">
@@ -16,6 +21,9 @@
             <ul class="list-group" id="sortable">
                 @foreach ($products as $product)
                     <li class="list-group-item" id="{{ $product->id }}">
+                        <div class="thumbnail">
+                            <img src="{{ $product->image }}" alt="...">
+                        </div>
                         {{ $product->name }} - {{ $product->ean }}
                     </li>
                 @endforeach

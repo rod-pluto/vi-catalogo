@@ -8,7 +8,10 @@
                 <div class="thumbnail" @if(Auth::user()->roles[0]->name != 'admin') onclick="modalAddItem({{ $product->id }})" @endif>
                     <img src="{{ $product->image }}" alt="...">
                     <div class="prod-box-info">
-                        <h5>{{ $product->name }}</h5>
+                        <h5>
+                            {{ $product->name }}
+                        </h5>
+                        <small>R$ {{ number_format($product->price, 2, ',', '') }} {{ $product->und }}</small>
                     </div>
                 </div>
             </div>

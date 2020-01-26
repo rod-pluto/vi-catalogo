@@ -15,7 +15,11 @@
         <div class="box-body">
             <ul class="list-group">
                 @foreach ($categories as $category)
-                    <li class="list-group-item"><a href="/admin/reordenar/produtos/categoria/{{ $category->id }}">{{ $category->name }}</a></li>
+                    <li class="list-group-item">
+                        <a href="/admin/reordenar/produtos/categoria/{{ $category->id }}">
+                            {{ $category->name }}
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>

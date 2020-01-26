@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,6 +28,16 @@ class HomeController extends Controller
         }
 
 	    return view('home', compact('orders', 'dealers'));
+    }
+
+    public function search(Request $request) {
+	    $products = Product::where('description','LIKE' ,'%'.$request->input('menu-search-input').'%')->get();
+	    return view('customer.catalog', compact('products'));
+    }
+
+    public function product($id) {
+	    $product = Product::findOrFail($id);
+	    return view('product', compact('product'));
     }
 
     public function redirectTo() {
