@@ -4,7 +4,7 @@
 
     <style>
         #sortable { list-style-type: none; margin: 0; padding: 0; }
-        #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 200px; height: 210px; text-align: center; }
+        #sortable li { margin: 6px 6px 6px 0; padding: 2px; float: left; width: 200px; height: 220px; text-align: center; }
     </style>
 
     <div class="box box-default">
