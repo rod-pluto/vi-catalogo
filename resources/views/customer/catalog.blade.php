@@ -10,8 +10,8 @@
                     <div class="prod-box-info">
                         <h5>
                             {{ $product->name }}
+                            <small>R$ {{ number_format($product->price, 2, ',', '') }}</small>
                         </h5>
-                        <small>R$ {{ number_format($product->price, 2, ',', '') }} {{ $product->und }}</small>
                     </div>
                 </div>
             </div>
