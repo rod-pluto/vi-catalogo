@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2ec66d2-2a16-4b14-8fe3-89813ff82df6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/reordering/reorder.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reordering/reorder.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/catalogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/catalogo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -198,6 +201,8 @@
       <workItem from="1580064032607" duration="157000" />
       <workItem from="1580064437889" duration="102000" />
       <workItem from="1580064564381" duration="3133000" />
+      <workItem from="1580668549332" duration="8000" />
+      <workItem from="1580668578836" duration="693000" />
     </task>
     <servers />
   </component>
@@ -229,10 +234,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="166" key="SettingsEditor/-1366.304.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1580064188558" />
-    <state x="668" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1580064569096">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="475" y="278" key="com.intellij.ide.util.TipDialog" timestamp="1580668590490">
+      <screen x="0" y="30" width="1366" height="738" />
     </state>
     <state x="668" y="349" key="com.intellij.ide.util.TipDialog/-1366.304.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1580064569096" />
+    <state x="475" y="278" key="com.intellij.ide.util.TipDialog/0.30.1366.738@0.30.1366.738" timestamp="1580668590490" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1580064767402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

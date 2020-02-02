@@ -241,13 +241,6 @@
             language: {
                 'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
             },
-            dom: 'Bfrtip',
-            buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5'
-            ],
             "order": [[ 0, "desc" ]]
         });
 
