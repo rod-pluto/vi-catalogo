@@ -30,6 +30,8 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('48png.png') }}" type="image/png">
+
+    @laravelPWA
 </head>
 <body class="hold-transition @yield('body_class')">
 

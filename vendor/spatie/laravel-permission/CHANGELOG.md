@@ -2,11 +2,42 @@
 
 All notable changes to `laravel-permission` will be documented in this file
 
+## 3.6.0 - 2020-01-17
+- Added Laravel 7.0 support
+- Allow splat operator for passing roles to `hasAnyRole()`
+
+## 3.5.0 - 2020-01-07
+- Added missing `guardName` to Exception `PermissionDoesNotExist` #1316
+
+## 3.4.1 - 2019-12-28
+- Fix 3.4.0 for Lumen
+
+## 3.4.0 - 2019-12-27
+- Make compatible with Swoole - ie: for long-running Laravel instances
+
+## 3.3.1 - 2019-12-24
+- Expose Artisan commands to app layer, not just to console
+
+## 3.3.0 - 2019-11-22
+- Remove duplicate and unreachable code
+- Remove checks for older Laravel versions
+
+## 3.2.0 - 2019-10-16
+- Implementation of optional guard check for hasRoles and hasAllRoles - See #1236
+
+## 3.1.0 - 2019-10-16
+- Use bigIncrements/bigInteger in migration - See #1224
+
 ## 3.0.0 - 2019-09-02
 - Update dependencies to allow for Laravel 6.0
 - Drop support for Laravel 5.7 and older, and PHP 7.1 and older. (They can use v2 of this package until they upgrade.)
 To be clear: v3 requires minimum Laravel 5.8 and PHP 7.2 
 
+
+## 2.38.0 - 2019-09-02
+- Allow support for multiple role/permission models
+- Load roles relationship only when missing
+- Wrap helpers in function_exists() check
 
 ## 2.37.0 - 2019-04-09
 - Added `permission:show` CLI command to display a table of roles/permissions
