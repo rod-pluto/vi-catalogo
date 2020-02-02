@@ -54,6 +54,19 @@
         </style>
 
         <div class="col-xs-12">
+            <div class="box box-body">
+                <form class="form-inline" method="GET" action="/pesquisa">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="menu-search-input" placeholder="Descrição do produto">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">Ultimos Pedidos</h3>
@@ -228,13 +241,6 @@
             language: {
                 'url': 'https://cdn.datatables.net/plug-ins/1.10.20/i18n/Portuguese-Brasil.json'
             },
-            dom: 'Bfrtip',
-            buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'csvHtml5',
-                'pdfHtml5'
-            ],
             "order": [[ 0, "desc" ]]
         });
 

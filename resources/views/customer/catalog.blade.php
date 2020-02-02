@@ -10,7 +10,6 @@
                     <div class="prod-box-info">
                         <h5>
                             {{ $product->name }}
-                            <small>R$ {{ number_format($product->price, 2, ',', '') }}</small>
                         </h5>
                     </div>
                 </div>

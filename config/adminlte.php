@@ -155,6 +155,7 @@ return [
             'method' => 'GET', //form method
             'input_name' => 'menu-search-input', //input name
             'text' => 'Descrição do produto', //input placeholder
+            'can'         => 'admin-dealer-access'
         ],
         ['header' => 'main_navigation'],
         [
